@@ -1,4 +1,4 @@
-package gl51.movie.service.Impl
+package gl51.movie.service.impl
 
 import gl51.movie.service.impl.MovieRegistryImpl
 import io.micronaut.test.annotation.MicronautTest
@@ -27,7 +27,7 @@ class MovieRegistryImplTest extends Specification {
         when:
         registry.addMovieToFavorites("aaaaa")
         then:
-        registry.listFavorites().size() == 1
+        registry.listFavorites().size() == 2
     }
 
 }
