@@ -27,7 +27,7 @@ class MovieRegistryImplTest extends Specification {
         when:
         registry.addMovieToFavorites("aaaaa")
         then:
-        registry.listFavorites().size() == 2
+        registry.listFavorites().size() == 1
     }
 
 }
