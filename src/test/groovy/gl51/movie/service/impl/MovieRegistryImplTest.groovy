@@ -33,14 +33,4 @@ class MovieRegistryImplTest extends Specification {
         registry.listFavorites().size() == 1
     }
 
-    void "the client should give the details of the movie"(){
-        when:
-        MovieClient mvc= Mock()
-        Movie m= new Movie()
-        mvc.getMovieDetail("t151") >> m
-        def movieservice= new MovieServiceImpl()
-        movieservice.mvc=mvc
-        then:
-            movieservice.getMovieInformations("t151")==m
-    }
 }
