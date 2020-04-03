@@ -22,7 +22,6 @@ import spock.lang.Specification
 import spock.lang.Shared
 
 import javax.inject.Inject
-import java.rmi.registry.Registry
 
 @MicronautTest
 class MovieControllerSpec extends Specification {
