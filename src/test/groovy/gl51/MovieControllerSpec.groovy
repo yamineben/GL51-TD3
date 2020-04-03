@@ -23,7 +23,6 @@ import spock.lang.Shared
 
 import javax.inject.Inject
 import java.rmi.registry.Registry
-import java.util.concurrent.Flow
 
 @MicronautTest
 class MovieControllerSpec extends Specification {
