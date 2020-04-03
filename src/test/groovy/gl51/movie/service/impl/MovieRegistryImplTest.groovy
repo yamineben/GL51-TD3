@@ -32,6 +32,7 @@ class MovieRegistryImplTest extends Specification {
         registry.addMovieToFavorites("aaaaa")
         then:
         registry.listFavorites().size() == 1
+        registry.listFavorites().find { it.title == 'my movie'}
     }
 
     @MockBean(MovieClientImpl)

@@ -47,10 +47,6 @@ class MovieControllerSpec extends Specification {
         response.status == HttpStatus.CREATED
     }
 
-    @MockBean(MovieClientImpl)
-    MovieClient movieClient() {
-        def mock = Mock(MovieClient)
-        mock.getMovieDetail("aaaaa") >> new Movie(imdbID: "aaaaa", title: 'my movie')
-        mock
-    }
+
+
 }
