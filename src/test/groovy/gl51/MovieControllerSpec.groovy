@@ -35,6 +35,7 @@ class MovieControllerSpec extends Specification {
     @Inject
     MovieRegistryImpl registry
 
+
     void "test index"() {
         given:
         Flowable flowable = client.retrieve(HttpRequest.GET("/movie"), Argument.listOf(Movie))
@@ -45,7 +46,6 @@ class MovieControllerSpec extends Specification {
 
     void "test film creation"() {
         given:
-        registry.addMovieToFavorites("aaaaa")
         HttpResponse response = client.toBlocking().exchange(
                 HttpRequest.POST("/movie", new MovieRequest(imdbId: "aaaaa"))
         )
