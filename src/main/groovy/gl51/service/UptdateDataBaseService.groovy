@@ -5,5 +5,5 @@ interface UptdateDataBaseService {
 /*
    Ceci met à jour la base de donnée
 */
-    public updateDatabase(int dimension_x, int dimension_y, String nom)
+   public  updateDatabase(int dimensionX, int dimensionY, String nom)
 }

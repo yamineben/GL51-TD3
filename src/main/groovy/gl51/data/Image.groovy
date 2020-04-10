@@ -1,9 +1,9 @@
 package gl51.data
 
 class Image {
-    int dimension_x
-    int dimension_y
+    int dimensionX
+    int dimensionY
     String nom
-    File source_file
+    File sourceFile
 
 }

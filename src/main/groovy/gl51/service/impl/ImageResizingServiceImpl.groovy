@@ -26,29 +26,29 @@ class ImageResizingServiceImpl implements ImageResizingService {
     ImageFiligraneService imageFiligraneService
 
     @Override
-    Image resize(Image image_source, int new_dimension_x, int new_dimension_y) {
+    Image resize(Image imageSource, int newDimensionX, int newDimensionY) {
     }
 
     @Override
     Image getAndResizeImage() {
         //Récupération de l'image
-        Image image_source=imageService.fetchImage()
+        Image imageSource=imageService.fetchImage()
 
         //Redimensionnement de l'image au format 1024*1024
-        Image new_image=resize(image_source,1024,1024)
+        Image newImage=resize(imageSource,1024,1024)
 
         //Création du thumbail
-        Image thumbnail=resize(image_source,50,50)
+        Image thumbnail=resize(imageSource,50,50)
 
         //Ajout du filigrane
         Image logo=imageFiligraneService.add_filigrane(thumbnail)
 
         //Stockage dans le cloud
-        cloudUploadService.uploadToCloud(new_image)
+        cloudUploadService.uploadToCloud(newImage)
         cloudUploadService.uploadToCloud(logo)
 
         //Mise à jour de la base de données
-        updateDataBaseService.updateDatabase(new_image.getDimension_x(),new_image.getDimension_y(),new_image.getNom())
+        updateDataBaseService.updateDatabase(newImage.getDimensionX(),newImage.getDimensionY(),newImage.getNom())
 
     }
 }
