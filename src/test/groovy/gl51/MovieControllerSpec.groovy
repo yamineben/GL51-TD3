@@ -32,9 +32,6 @@ class MovieControllerSpec extends Specification {
     @Shared @AutoCleanup @Inject @Client("/")
     RxHttpClient client
 
-    @Inject
-    MovieRegistryImpl registry
-
 
     void "test index"() {
         given:
@@ -49,9 +46,11 @@ class MovieControllerSpec extends Specification {
         HttpResponse response = client.toBlocking().exchange(
                 HttpRequest.POST("/movie", new MovieRequest(imdbId: "aaaaa"))
         )
+        Flowable flowable = client.retrieve(HttpRequest.GET("/movie"), Argument.listOf(Movie))
+        def content = flowable.firstElement().blockingGet()
         expect:
-        registry.listFavorites().find { it.title == 'my movie'}
         response.status == HttpStatus.CREATED
+        content.find { it.title == 'my movie' && it.imdbID=="aaaaa"}
     }
 
     @MockBean(MovieClientImpl)

@@ -17,17 +17,19 @@ import javax.inject.Inject
 class MovieController {
 
     @Inject
-    MovieRegistryImpl registry
+    MovieRegistry registry
 
     @Get("/")
     List<Movie> index() {
-        return []
+        return registry.listFavorites()
     }
 
     @Post('/')
     HttpStatus addMovie(MovieRequest movieRequest) {
-        registry.addMovieToFavorites(movieRequest.getImdbId())
+        registry.addMovieToFavorites(movieRequest.imdbId)
         HttpStatus.CREATED
     }
+
+
 
 }
