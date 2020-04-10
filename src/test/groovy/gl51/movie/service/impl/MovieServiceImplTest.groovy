@@ -6,7 +6,6 @@ import io.micronaut.test.annotation.MockBean
 import spock.lang.Specification
 import io.micronaut.test.annotation.MicronautTest
 
-import javax.inject.Inject
 
 @MicronautTest
 class MovieServiceImplTest extends Specification {

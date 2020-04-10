@@ -1,10 +1,8 @@
 package gl51
 
-import gl51.movie.data.AddToFavoriteRequest
 import gl51.movie.data.Movie
 import gl51.movie.data.MovieRequest
 import gl51.movie.service.MovieRegistry
-import gl51.movie.service.impl.MovieRegistryImpl
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.HttpStatus

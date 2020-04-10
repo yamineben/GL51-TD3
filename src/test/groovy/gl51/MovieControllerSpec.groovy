@@ -14,7 +14,6 @@ import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus
 import io.micronaut.test.annotation.MockBean
 import io.reactivex.Flowable
-import io.reactivex.Maybe
 import spock.lang.AutoCleanup
 import spock.lang.Specification
 import spock.lang.Shared
