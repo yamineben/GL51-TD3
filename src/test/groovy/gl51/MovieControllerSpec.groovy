@@ -30,7 +30,7 @@ class MovieControllerSpec extends Specification {
     RxHttpClient client
 
 
-    void "test index"() {
+    void testindex() {
         given:
         Flowable flowable = client.retrieve(HttpRequest.GET("/movie"), Argument.listOf(Movie))
         def content = flowable.firstElement()
@@ -38,7 +38,7 @@ class MovieControllerSpec extends Specification {
         content.blockingGet() == []
     }
 
-    void "test film creation"() {
+    void testfilmcreation() {
         given:
         HttpResponse response = client.toBlocking().exchange(
                 HttpRequest.POST("/movie", new MovieRequest(imdbId: "aaaaa"))

@@ -12,7 +12,7 @@ class MovieServiceImplTest extends Specification {
     MovieServiceImpl movieService= new MovieServiceImpl()
 
     @MockBean(MovieClient)
-    void "the client should give the details of the movie"(){
+    void theclientshouldgivethedetailsofthemovie(){
         when:
         MovieClient mvc= Mock()
         Movie m= new Movie()
